@@ -53,7 +53,7 @@ ssize_t rio_writen(int fd , void * usrbuf,size_t n)
 		char * buf = (char*)usrbuf;
 		while(require>0)
 		{
-			if((writen = write(fd,buf,require)<0))
+			if((writen = write(fd,buf,require))<0)
 			{
 				if(errno == EINTR)
 					continue;
